@@ -25,7 +25,7 @@ public class MobilePhone {
 
     public void modifyContactName(String oldName, String newName) {
         int position = findContact(oldName);
-        if (position >= 0) {
+        if (position >= 0 && !onFile(newName)) {
             this.contactList.get(position).setName(newName);
             System.out.println(oldName + " has been updated to " + newName + ".");
         } else {
